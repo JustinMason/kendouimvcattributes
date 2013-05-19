@@ -1,0 +1,8 @@
+﻿@{
+    var values = ViewData.ModelMetadata.AdditionalValues;
+    var watermark = values["watermark"] as string;
+}
+@Html.TextBoxFor(x=>x,  new Dictionary<string, object>{
+    {"data-binding","kendoTextBox"},    
+    {"placeholder", watermark}
+})

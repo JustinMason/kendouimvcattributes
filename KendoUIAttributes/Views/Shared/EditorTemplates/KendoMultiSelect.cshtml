@@ -1,0 +1,55 @@
+﻿@using System.Collections
+@{
+    var values = ViewData.ModelMetadata.AdditionalValues;
+    var cascadeFrom = new List<string>();
+    var cascadeId = new List<string>();
+    
+    if (!string.IsNullOrWhiteSpace(values["cascadeFrom"] as string))
+    {
+        var cascadeFromList = (values["cascadeFrom"] as string).Split(',');
+        foreach (var s in cascadeFromList)
+        {
+            var cascadeFromVal = s.Trim();
+            cascadeFrom.Add(cascadeFromVal);
+            cascadeId.Add(string.Format("{0}_{1}", ViewData.ModelMetadata.ContainerType.Name, cascadeFromVal));
+        }
+    }
+    
+    var watermark = values["watermark"] as string;
+    var parameters = values["params"] as string;
+    var controlId = string.Format("{0}_{1}", ViewData.ModelMetadata.ContainerType.Name, ViewData.ModelMetadata.PropertyName);
+    var useTextValue = (bool) values["useTextValue"];
+    var textField = values["textField"] as string;
+    var valueField = values["valueField"] as string;
+
+    ViewData.TemplateInfo.HtmlFieldPrefix = controlId; // overriding the given 'name' property
+
+    var enumeratorOfValues = ViewData.ModelMetadata.Model as IEnumerable;
+    var selectedValues = new List<string>();
+    if (enumeratorOfValues != null)
+    {
+        foreach (var item in enumeratorOfValues)
+        {
+            selectedValues.Add(item.ToString());
+        }
+    }
+
+    var htmlAttributes = new Dictionary<string, object>
+    {
+        {"id", controlId} ,
+        {"data-binding", "kendoMultiSelect"},
+        {"data-textfield", textField},
+        {"data-valuefield", useTextValue ? textField : valueField},
+        {"data-endpoint", Url.Action((string) values["action"], (string) values["controller"])},
+        {"data-cascadeparam", String.Join(",", cascadeFrom)},
+        {"data-cascadeid", String.Join(",",cascadeId)},
+        {"data-selected", String.Join( ",", selectedValues)},
+        {"data-params", !string.IsNullOrWhiteSpace(parameters) ? parameters: String.Empty},
+        {"data-containertype", ViewData.ModelMetadata.ContainerType.Name},
+        {"data-watermark", watermark}
+    };
+}
+
+<div class="editor-field">
+    @Html.HiddenFor(x => x, htmlAttributes)
+</div>

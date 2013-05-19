@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KendoUIAttributes", "KendoUIAttributes\KendoUIAttributes.csproj", "{C7293A29-C5EE-4E12-B99E-EBF22BA0C5E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KendoUIMvcAttributes", "KendoUIMvcAttributes\KendoUIMvcAttributes.csproj", "{35605321-E8DF-4629-8DF0-AB5AA55AC440}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KendoUIMvcAttributesNuget", "KendoUIMvcAttributesNuget\KendoUIMvcAttributesNuget.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7293A29-C5EE-4E12-B99E-EBF22BA0C5E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7293A29-C5EE-4E12-B99E-EBF22BA0C5E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7293A29-C5EE-4E12-B99E-EBF22BA0C5E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7293A29-C5EE-4E12-B99E-EBF22BA0C5E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35605321-E8DF-4629-8DF0-AB5AA55AC440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35605321-E8DF-4629-8DF0-AB5AA55AC440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35605321-E8DF-4629-8DF0-AB5AA55AC440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35605321-E8DF-4629-8DF0-AB5AA55AC440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
